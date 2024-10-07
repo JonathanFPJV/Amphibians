@@ -19,13 +19,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.amphibians.ui.theme.AmphibiansTheme
-
-
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -61,9 +61,19 @@ fun ProgPrincipalAmphibians() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BarraSuperior() {
-    CenterAlignedTopAppBar(
-        title = { Text("Amphibians", color = Color.White, fontWeight = FontWeight.Bold) },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = MaterialTheme.colorScheme.primary)
+    TopAppBar(
+        title = {
+            Text(
+                "Amphibians",
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.fillMaxWidth(), // Para que el título ocupe todo el ancho
+                textAlign = TextAlign.Start // Alinea el texto a la izquierda
+            )
+        },
+        colors = TopAppBarDefaults.smallTopAppBarColors(
+            containerColor = Color(0xFF4CAF50)
+        )
     )
 }
 

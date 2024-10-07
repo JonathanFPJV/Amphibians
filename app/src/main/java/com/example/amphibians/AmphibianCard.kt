@@ -38,7 +38,10 @@ fun AmphibianCard(amphibian: AmphibianModel) {
             .fillMaxWidth()
             .padding(16.dp),
         elevation = CardDefaults.cardElevation(8.dp),
-        shape = RoundedCornerShape(16.dp)
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFFB6D2B7) // Color de fondo de la tarjeta
+        )
     ) {
         Column(
             modifier = Modifier.padding(8.dp),
